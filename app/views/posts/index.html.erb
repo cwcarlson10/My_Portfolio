@@ -1,14 +1,18 @@
-<h1>My Posts</h1>
-<% @posts.each do |post| %>
-  <h1><%= post.title %></h1>
-  <h2><%= post.author %></h2>
-  <p><%= post.body %></p>
-  <br/>
+<div class="jumbotron">
+	<h1>My Posts</h1>
+</div>
 
-  <%= link_to 'Show', post_path(post) %>
-<% end %>
-<br/>
-<br/>
-<%= link_to 'Back', root_path %>
-<br/>
-<%= link_to 'New Post', new_post_path(@post) %>
+<div class="container">
+	<% @posts.each do |post| %>
+	  <h1><%= post.title %></h1>
+	  <h2><%= post.author %></h2>
+	  <p><%= post.body %></p>
+	  <br/>
+
+	  <%= link_to 'Show', post_path(post), class: 'btn btn-primary' %>
+	<% end %>
+	<br/>
+	<br/>
+	<%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+	<%= link_to 'New Post', new_post_path(@post), class: 'btn btn-primary' %>
+</div>
